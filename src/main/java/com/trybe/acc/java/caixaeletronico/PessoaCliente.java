@@ -7,7 +7,7 @@ public class PessoaCliente {
   private String nomeCompleto;
   private String cpf;
   private String senha;
-  private ArrayList<Conta> contas;
+  private ArrayList<Conta> contas = new ArrayList<Conta>();
 
   /**
    * Construtor.
@@ -81,11 +81,11 @@ public class PessoaCliente {
   }
 
   /**
-   * Prima resumo das contas.
+   * Printa resumo das contas.
    */
   public void retornarResumoContas() {
     for (Conta conta : contas) {
-      conta.retornarResumoConta();
+      System.out.println(conta.retornarResumoConta());;
     }
   }
 
