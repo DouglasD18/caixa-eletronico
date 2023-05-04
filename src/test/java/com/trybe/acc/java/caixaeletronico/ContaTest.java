@@ -1,5 +1,6 @@
 package com.trybe.acc.java.caixaeletronico;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -8,7 +9,6 @@ import org.junit.jupiter.api.Test;
 
 @DisplayName("Teste da classe Conta")
 class ContaTest {
-
   @Test
   @DisplayName("6 - Testa o construtor da classe conta.")
   void construtorTest() {
@@ -44,20 +44,28 @@ class ContaTest {
   @Test
   @DisplayName("9 - Testa o método retornar extrato está imprimindo os valores corretamente.")
   void retornarExtratoTest() {
-
+    fail("Não implementado");
   }
 
   @Test
   @DisplayName("10 - Testa o método Getter do atributo idConta está retornando.")
   void getIdContaTest() {
-    fail("Não implementado");
-
+    Banco banco = new Banco();
+    PessoaCliente pessoaCliente = new PessoaCliente("any_name", "any_cpf", "any_senha");
+    Conta conta = new Conta("Corrente", pessoaCliente, banco);
+    String id = conta.getIdConta();
+    assertNotNull(id);
+    assertTrue(id instanceof String);
   }
 
   @Test
   @DisplayName("11 - Testa o método método Getter do atributo pessoaCliente está retornando.")
   void getPessoaClienteTest() {
-    fail("Não implementado");
+    Banco banco = new Banco();
+    PessoaCliente pessoaCliente = new PessoaCliente("any_name", "any_cpf", "any_senha");
+    Conta conta = new Conta("Corrente", pessoaCliente, banco);
+    PessoaCliente cliente = conta.getPessoaCliente();
+    assertEquals(cliente, pessoaCliente);
   }
 
 }
