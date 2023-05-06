@@ -97,7 +97,8 @@ public class Banco {
     if (contas.get(daConta) != null && contas.get(paraConta) != null && daConta != paraConta) {
       for (int indice = 0; indice < pessoaCliente.retornaNumeroDeContas(); indice++) {
         if (pessoaCliente.retornarIdContaEspecifica(indice) == contas.get(daConta).getIdConta()) {
-          pessoaCliente.adicionarTransacaoContaEspecifica(indice, quantia, "Transferência enviada");
+          pessoaCliente.adicionarTransacaoContaEspecifica(indice, -quantia,
+              "Transferência enviada");
         }
 
         if (pessoaCliente.retornarIdContaEspecifica(indice) == contas.get(paraConta).getIdConta()) {
@@ -117,7 +118,7 @@ public class Banco {
         && pessoaCliente.retornarSaldoContaEspecifica(daConta) >= quantia) {
       for (int indice = 0; indice < pessoaCliente.retornaNumeroDeContas(); indice++) {
         if (pessoaCliente.retornarIdContaEspecifica(indice) == contas.get(daConta).getIdConta()) {
-          pessoaCliente.adicionarTransacaoContaEspecifica(indice, quantia, "Saque Realizado!");
+          pessoaCliente.adicionarTransacaoContaEspecifica(indice, -quantia, "Saque Realizado!");
         }
       }
     }
